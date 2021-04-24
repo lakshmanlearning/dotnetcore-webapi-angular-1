@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet-WebAPI-Angular", "DotNet-WebAPI-Angular\DotNet-WebAPI-Angular.csproj", "{2DF9BA4A-02AD-4E6C-8F8B-4F697130C95A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2DF9BA4A-02AD-4E6C-8F8B-4F697130C95A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DF9BA4A-02AD-4E6C-8F8B-4F697130C95A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DF9BA4A-02AD-4E6C-8F8B-4F697130C95A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DF9BA4A-02AD-4E6C-8F8B-4F697130C95A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {82286C5E-7521-4CFE-8343-8E89F74227D1}
+	EndGlobalSection
+EndGlobal
