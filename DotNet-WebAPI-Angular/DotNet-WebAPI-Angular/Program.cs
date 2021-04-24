@@ -24,7 +24,8 @@ namespace DotNet_WebAPI_Angular
                 })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup(typeof(Startup).Assembly.FullName);
+                    //webBuilder.UseStartup(typeof(Startup).Assembly.FullName);
+                    webBuilder.UseStartup<Startup>();
                 });
     }
 }
