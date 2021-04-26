@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>DotNet_WebAPI_Angular_InterfaceContracts</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DotNet-WebAPI-Angular-Data\DotNet-WebAPI-Angular-Data.csproj" />
+  </ItemGroup>
+
+</Project>

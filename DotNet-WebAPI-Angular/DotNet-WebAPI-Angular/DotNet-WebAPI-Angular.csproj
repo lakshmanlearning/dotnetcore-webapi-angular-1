@@ -30,6 +30,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DotNet-WebAPI-Angular-Data\DotNet-WebAPI-Angular-Data.csproj" />
+    <ProjectReference Include="..\DotNet-WebAPI-Angular-InterfaceContracts\DotNet-WebAPI-Angular-InterfaceContracts.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

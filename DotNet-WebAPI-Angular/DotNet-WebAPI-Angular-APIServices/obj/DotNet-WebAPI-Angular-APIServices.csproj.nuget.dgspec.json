@@ -1,0 +1,209 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Learning\\DotNetCore\\DotnetCoreWebApiAngular\\DotNet-WebAPI-Angular\\DotNet-WebAPI-Angular-APIServices\\DotNet-WebAPI-Angular-APIServices.csproj": {}
+  },
+  "projects": {
+    "D:\\Learning\\DotNetCore\\DotnetCoreWebApiAngular\\DotNet-WebAPI-Angular\\DotNet-WebAPI-Angular-APIServices\\DotNet-WebAPI-Angular-APIServices.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Learning\\DotNetCore\\DotnetCoreWebApiAngular\\DotNet-WebAPI-Angular\\DotNet-WebAPI-Angular-APIServices\\DotNet-WebAPI-Angular-APIServices.csproj",
+        "projectName": "DotNet-WebAPI-Angular-APIServices",
+        "projectPath": "D:\\Learning\\DotNetCore\\DotnetCoreWebApiAngular\\DotNet-WebAPI-Angular\\DotNet-WebAPI-Angular-APIServices\\DotNet-WebAPI-Angular-APIServices.csproj",
+        "packagesPath": "C:\\Users\\laxman\\.nuget\\packages\\",
+        "outputPath": "D:\\Learning\\DotNetCore\\DotnetCoreWebApiAngular\\DotNet-WebAPI-Angular\\DotNet-WebAPI-Angular-APIServices\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\laxman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "D:\\Learning\\DotNetCore\\DotnetCoreWebApiAngular\\DotNet-WebAPI-Angular\\DotNet-WebAPI-Angular-InterfaceContracts\\DotNet-WebAPI-Angular-InterfaceContracts.csproj": {
+                "projectPath": "D:\\Learning\\DotNetCore\\DotnetCoreWebApiAngular\\DotNet-WebAPI-Angular\\DotNet-WebAPI-Angular-InterfaceContracts\\DotNet-WebAPI-Angular-InterfaceContracts.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Learning\\DotNetCore\\DotnetCoreWebApiAngular\\DotNet-WebAPI-Angular\\DotNet-WebAPI-Angular-Data\\DotNet-WebAPI-Angular-Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Learning\\DotNetCore\\DotnetCoreWebApiAngular\\DotNet-WebAPI-Angular\\DotNet-WebAPI-Angular-Data\\DotNet-WebAPI-Angular-Data.csproj",
+        "projectName": "DotNet-WebAPI-Angular-Data",
+        "projectPath": "D:\\Learning\\DotNetCore\\DotnetCoreWebApiAngular\\DotNet-WebAPI-Angular\\DotNet-WebAPI-Angular-Data\\DotNet-WebAPI-Angular-Data.csproj",
+        "packagesPath": "C:\\Users\\laxman\\.nuget\\packages\\",
+        "outputPath": "D:\\Learning\\DotNetCore\\DotnetCoreWebApiAngular\\DotNet-WebAPI-Angular\\DotNet-WebAPI-Angular-Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\laxman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Learning\\DotNetCore\\DotnetCoreWebApiAngular\\DotNet-WebAPI-Angular\\DotNet-WebAPI-Angular-InterfaceContracts\\DotNet-WebAPI-Angular-InterfaceContracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Learning\\DotNetCore\\DotnetCoreWebApiAngular\\DotNet-WebAPI-Angular\\DotNet-WebAPI-Angular-InterfaceContracts\\DotNet-WebAPI-Angular-InterfaceContracts.csproj",
+        "projectName": "DotNet-WebAPI-Angular-InterfaceContracts",
+        "projectPath": "D:\\Learning\\DotNetCore\\DotnetCoreWebApiAngular\\DotNet-WebAPI-Angular\\DotNet-WebAPI-Angular-InterfaceContracts\\DotNet-WebAPI-Angular-InterfaceContracts.csproj",
+        "packagesPath": "C:\\Users\\laxman\\.nuget\\packages\\",
+        "outputPath": "D:\\Learning\\DotNetCore\\DotnetCoreWebApiAngular\\DotNet-WebAPI-Angular\\DotNet-WebAPI-Angular-InterfaceContracts\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\laxman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "D:\\Learning\\DotNetCore\\DotnetCoreWebApiAngular\\DotNet-WebAPI-Angular\\DotNet-WebAPI-Angular-Data\\DotNet-WebAPI-Angular-Data.csproj": {
+                "projectPath": "D:\\Learning\\DotNetCore\\DotnetCoreWebApiAngular\\DotNet-WebAPI-Angular\\DotNet-WebAPI-Angular-Data\\DotNet-WebAPI-Angular-Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
