@@ -6,10 +6,6 @@ namespace DotNet_WebAPI_Angular_Data.Models
 {
     public partial class MyOnlineShoppingContext : DbContext
     {
-        public MyOnlineShoppingContext()
-        {
-        }
-
         public MyOnlineShoppingContext(DbContextOptions<MyOnlineShoppingContext> options)
             : base(options)
         {
