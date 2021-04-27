@@ -20,7 +20,7 @@ namespace DotNet_WebAPI_Angular
             Host.CreateDefaultBuilder(args)
                 .ConfigureAppConfiguration((hostContext, configuration) => {
                     var env = hostContext.HostingEnvironment;
-                    configuration.AddJsonFile("appsettings.json").AddJsonFile($"appsettings.{env.EnvironmentName}.json");
+                    configuration.AddJsonFile($"appsettings.{env.EnvironmentName}.json", true, true).AddEnvironmentVariables();
                 })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {

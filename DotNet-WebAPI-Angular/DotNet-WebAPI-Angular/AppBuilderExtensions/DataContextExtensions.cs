@@ -16,9 +16,15 @@ namespace DotNet_WebAPI_Angular.AppBuilderExtensions
         {
             services.AddDbContextPool<MyOnlineShoppingContext>(options => 
             {
-                options.UseSqlServer(configuration.GetSection("MyConnectionString").Value);
+                options.UseSqlServer(GetConnectionString(configuration));
             });
             return services;
+        }
+
+        public static string GetConnectionString(IConfiguration configuration)
+        {
+            var ctr = configuration.GetSection("MyConnectionString").Value;
+            return ctr;
         }
     }
 }
