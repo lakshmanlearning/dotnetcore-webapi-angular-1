@@ -6,29 +6,29 @@ go
 use [MyOnlineShopping]
 go
 
-CREATE TABLE [dbo].[Tbl_Cart](
+CREATE TABLE [dbo].[Cart](
 	[CartId] [int] IDENTITY(1,1) NOT NULL,
 	[ProductId] [int] NULL,
 	[MemberId] [int] NULL,
 	[CartStatusId] [int] NULL,
-PRIMARY KEY CLUSTERED
+CONSTRAINT [PK_Cart_CartId] PRIMARY KEY CLUSTERED
 (
 	[CartId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Tbl_CartStatus]    Script Date: 12/2/2018 2:59:39 PM ******/
+/****** Object:  Table [dbo].[CartStatus]    Script Date: 12/2/2018 2:59:39 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_PADDING ON
 GO
-CREATE TABLE [dbo].[Tbl_CartStatus](
+CREATE TABLE [dbo].[CartStatus](
 	[CartStatusId] [int] IDENTITY(1,1) NOT NULL,
 	[CartStatus] [varchar](500) NULL,
-PRIMARY KEY CLUSTERED
+CONSTRAINT [PK_CartStatus_CartStatusId] PRIMARY KEY CLUSTERED
 (
 	[CartStatusId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -37,23 +37,23 @@ PRIMARY KEY CLUSTERED
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Tbl_Category]    Script Date: 12/2/2018 2:59:39 PM ******/
+/****** Object:  Table [dbo].[Category]    Script Date: 12/2/2018 2:59:39 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_PADDING ON
 GO
-CREATE TABLE [dbo].[Tbl_Category](
+CREATE TABLE [dbo].[Category](
 	[CategoryId] [int] IDENTITY(1,1) NOT NULL,
 	[CategoryName] [varchar](500) NULL,
 	[IsActive] [bit] NULL,
 	[IsDelete] [bit] NULL,
-PRIMARY KEY CLUSTERED
+CONSTRAINT [PK_Category_CategoryId] PRIMARY KEY CLUSTERED
 (
 	[CategoryId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
-UNIQUE NONCLUSTERED
+CONSTRAINT [PK_Category_CategoryName] UNIQUE NONCLUSTERED
 (
 	[CategoryName] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -62,30 +62,30 @@ UNIQUE NONCLUSTERED
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Tbl_MemberRole]    Script Date: 12/2/2018 2:59:39 PM ******/
+/****** Object:  Table [dbo].[MemberRole]    Script Date: 12/2/2018 2:59:39 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[Tbl_MemberRole](
+CREATE TABLE [dbo].[MemberRole](
 	[MemberRoleID] [int] IDENTITY(1,1) NOT NULL,
 	[memberId] [int] NULL,
 	[RoleId] [int] NULL,
-PRIMARY KEY CLUSTERED
+CONSTRAINT [PK_MemberRole_MemberRoleID] PRIMARY KEY CLUSTERED
 (
 	[MemberRoleID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Tbl_Members]    Script Date: 12/2/2018 2:59:39 PM ******/
+/****** Object:  Table [dbo].[Members]    Script Date: 12/2/2018 2:59:39 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_PADDING ON
 GO
-CREATE TABLE [dbo].[Tbl_Members](
+CREATE TABLE [dbo].[Members](
 	[MemberId] [int] IDENTITY(1,1) NOT NULL,
 	[FristName] [varchar](200) NULL,
 	[LastName] [varchar](200) NULL,
@@ -95,15 +95,15 @@ CREATE TABLE [dbo].[Tbl_Members](
 	[IsDelete] [bit] NULL,
 	[CreatedOn] [datetime] NULL,
 	[ModifiedOn] [datetime] NULL,
-PRIMARY KEY CLUSTERED
+CONSTRAINT [PK_Members_MemberId] PRIMARY KEY CLUSTERED
 (
 	[MemberId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
-UNIQUE NONCLUSTERED
+CONSTRAINT [UQ_Members_LastName] UNIQUE NONCLUSTERED
 (
 	[LastName] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
-UNIQUE NONCLUSTERED
+CONSTRAINT [UQ_Members_EmailId] UNIQUE NONCLUSTERED
 (
 	[EmailId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -112,14 +112,14 @@ UNIQUE NONCLUSTERED
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Tbl_Product]    Script Date: 12/2/2018 2:59:39 PM ******/
+/****** Object:  Table [dbo].[Product]    Script Date: 12/2/2018 2:59:39 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_PADDING ON
 GO
-CREATE TABLE [dbo].[Tbl_Product](
+CREATE TABLE [dbo].[Product](
 	[ProductId] [int] IDENTITY(1,1) NOT NULL,
 	[ProductName] [varchar](500) NULL,
 	[CategoryId] [int] NULL,
@@ -131,11 +131,11 @@ CREATE TABLE [dbo].[Tbl_Product](
 	[ProductImage] [varchar](max) NULL,
 	[IsFeatured] [bit] NULL,
 	[Quantity] [int] NULL,
-PRIMARY KEY CLUSTERED
+CONSTRAINT [PK_Product_ProductId] PRIMARY KEY CLUSTERED
 (
 	[ProductId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
-UNIQUE NONCLUSTERED
+CONSTRAINT [UQ_Product_ProductName] UNIQUE NONCLUSTERED
 (
 	[ProductName] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -144,21 +144,21 @@ UNIQUE NONCLUSTERED
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Tbl_Roles]    Script Date: 12/2/2018 2:59:39 PM ******/
+/****** Object:  Table [dbo].[Roles]    Script Date: 12/2/2018 2:59:39 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_PADDING ON
 GO
-CREATE TABLE [dbo].[Tbl_Roles](
+CREATE TABLE [dbo].[Roles](
 	[RoleId] [int] IDENTITY(1,1) NOT NULL,
 	[RoleName] [varchar](200) NULL,
-PRIMARY KEY CLUSTERED
+CONSTRAINT [PK_Roles_RoleId] PRIMARY KEY CLUSTERED
 (
 	[RoleId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
-UNIQUE NONCLUSTERED
+CONSTRAINT [UQ_Roles_RoleName] UNIQUE NONCLUSTERED
 (
 	[RoleName] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -167,14 +167,14 @@ UNIQUE NONCLUSTERED
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Tbl_ShippingDetails]    Script Date: 12/2/2018 2:59:39 PM ******/
+/****** Object:  Table [dbo].[ShippingDetails]    Script Date: 12/2/2018 2:59:39 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_PADDING ON
 GO
-CREATE TABLE [dbo].[Tbl_ShippingDetails](
+CREATE TABLE [dbo].[ShippingDetails](
 	[ShippingDetailId] [int] IDENTITY(1,1) NOT NULL,
 	[MemberId] [int] NULL,
 	[Adress] [varchar](500) NULL,
@@ -185,7 +185,7 @@ CREATE TABLE [dbo].[Tbl_ShippingDetails](
 	[OrderId] [int] NULL,
 	[AmountPaid] [decimal](18, 0) NULL,
 	[PaymentType] [varchar](50) NULL,
-PRIMARY KEY CLUSTERED
+CONSTRAINT [PK_ShippingDetails_ShippingDetailId] PRIMARY KEY CLUSTERED
 (
 	[ShippingDetailId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -194,18 +194,18 @@ PRIMARY KEY CLUSTERED
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Tbl_SlideImage]    Script Date: 12/2/2018 2:59:39 PM ******/
+/****** Object:  Table [dbo].[SlideImage]    Script Date: 12/2/2018 2:59:39 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_PADDING ON
 GO
-CREATE TABLE [dbo].[Tbl_SlideImage](
+CREATE TABLE [dbo].[SlideImage](
 	[SlideId] [int] IDENTITY(1,1) NOT NULL,
 	[SlideTitle] [varchar](500) NULL,
 	[SlideImage] [varchar](max) NULL,
-PRIMARY KEY CLUSTERED
+CONSTRAINT [PK_SlideImage_SlideId] PRIMARY KEY CLUSTERED
 (
 	[SlideId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -214,14 +214,14 @@ PRIMARY KEY CLUSTERED
 GO
 SET ANSI_PADDING OFF
 GO
-ALTER TABLE [dbo].[Tbl_Cart]  WITH CHECK ADD FOREIGN KEY([ProductId])
-REFERENCES [dbo].[Tbl_Product] ([ProductId])
+ALTER TABLE [dbo].[Cart]  WITH CHECK ADD CONSTRAINT [FK_Product_ProductId] FOREIGN KEY([ProductId])
+REFERENCES [dbo].[Product] ([ProductId])
 GO
-ALTER TABLE [dbo].[Tbl_Product]  WITH CHECK ADD FOREIGN KEY([CategoryId])
-REFERENCES [dbo].[Tbl_Category] ([CategoryId])
+ALTER TABLE [dbo].[Product]  WITH CHECK ADD CONSTRAINT [FK_Category_CategoryId] FOREIGN KEY([CategoryId])
+REFERENCES [dbo].[Category] ([CategoryId])
 GO
-ALTER TABLE [dbo].[Tbl_ShippingDetails]  WITH CHECK ADD FOREIGN KEY([MemberId])
-REFERENCES [dbo].[Tbl_Members] ([MemberId])
+ALTER TABLE [dbo].[ShippingDetails]  WITH CHECK ADD CONSTRAINT [FK_Members_MemberId] FOREIGN KEY([MemberId])
+REFERENCES [dbo].[Members] ([MemberId])
 GO
 USE [master]
 GO

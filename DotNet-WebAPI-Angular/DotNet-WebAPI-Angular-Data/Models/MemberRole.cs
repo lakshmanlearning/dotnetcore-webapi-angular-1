@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DotNet_WebAPI_Angular_Data.Models
 {
-    public partial class TblMemberRole
+    public partial class MemberRole
     {
         public int MemberRoleId { get; set; }
         public int? MemberId { get; set; }

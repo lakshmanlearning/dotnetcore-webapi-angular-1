@@ -11,15 +11,15 @@ namespace DotNet_WebAPI_Angular_Data.Models
         {
         }
 
-        public virtual DbSet<TblCart> TblCart { get; set; }
-        public virtual DbSet<TblCartStatus> TblCartStatus { get; set; }
-        public virtual DbSet<TblCategory> TblCategory { get; set; }
-        public virtual DbSet<TblMemberRole> TblMemberRole { get; set; }
-        public virtual DbSet<TblMembers> TblMembers { get; set; }
-        public virtual DbSet<TblProduct> TblProduct { get; set; }
-        public virtual DbSet<TblRoles> TblRoles { get; set; }
-        public virtual DbSet<TblShippingDetails> TblShippingDetails { get; set; }
-        public virtual DbSet<TblSlideImage> TblSlideImage { get; set; }
+        public virtual DbSet<Cart> Cart { get; set; }
+        public virtual DbSet<CartStatus> CartStatus { get; set; }
+        public virtual DbSet<Category> Category { get; set; }
+        public virtual DbSet<MemberRole> MemberRole { get; set; }
+        public virtual DbSet<Members> Members { get; set; }
+        public virtual DbSet<Product> Product { get; set; }
+        public virtual DbSet<Roles> Roles { get; set; }
+        public virtual DbSet<ShippingDetails> ShippingDetails { get; set; }
+        public virtual DbSet<SlideImage> SlideImage { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -32,40 +32,26 @@ namespace DotNet_WebAPI_Angular_Data.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<TblCart>(entity =>
+            modelBuilder.Entity<Cart>(entity =>
             {
-                entity.HasKey(e => e.CartId)
-                    .HasName("PK__Tbl_Cart__51BCD7B73F33F7E4");
-
-                entity.ToTable("Tbl_Cart");
-
                 entity.HasOne(d => d.Product)
-                    .WithMany(p => p.TblCart)
+                    .WithMany(p => p.Cart)
                     .HasForeignKey(d => d.ProductId)
-                    .HasConstraintName("FK__Tbl_Cart__Produc__38996AB5");
+                    .HasConstraintName("FK_Product_ProductId");
             });
 
-            modelBuilder.Entity<TblCartStatus>(entity =>
+            modelBuilder.Entity<CartStatus>(entity =>
             {
-                entity.HasKey(e => e.CartStatusId)
-                    .HasName("PK__Tbl_Cart__031908A81CEDA288");
-
-                entity.ToTable("Tbl_CartStatus");
-
-                entity.Property(e => e.CartStatus)
+                entity.Property(e => e.CartStatus1)
+                    .HasColumnName("CartStatus")
                     .HasMaxLength(500)
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<TblCategory>(entity =>
+            modelBuilder.Entity<Category>(entity =>
             {
-                entity.HasKey(e => e.CategoryId)
-                    .HasName("PK__Tbl_Cate__19093A0BC69108BA");
-
-                entity.ToTable("Tbl_Category");
-
                 entity.HasIndex(e => e.CategoryName)
-                    .HasName("UQ__Tbl_Cate__8517B2E043E760D6")
+                    .HasName("PK_Category_CategoryName")
                     .IsUnique();
 
                 entity.Property(e => e.CategoryName)
@@ -73,31 +59,24 @@ namespace DotNet_WebAPI_Angular_Data.Models
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<TblMemberRole>(entity =>
+            modelBuilder.Entity<MemberRole>(entity =>
             {
-                entity.HasKey(e => e.MemberRoleId)
-                    .HasName("PK__Tbl_Memb__673C22CB01AB4D80");
-
-                entity.ToTable("Tbl_MemberRole");
-
                 entity.Property(e => e.MemberRoleId).HasColumnName("MemberRoleID");
 
                 entity.Property(e => e.MemberId).HasColumnName("memberId");
             });
 
-            modelBuilder.Entity<TblMembers>(entity =>
+            modelBuilder.Entity<Members>(entity =>
             {
                 entity.HasKey(e => e.MemberId)
-                    .HasName("PK__Tbl_Memb__0CF04B18415970A1");
-
-                entity.ToTable("Tbl_Members");
+                    .HasName("PK_Members_MemberId");
 
                 entity.HasIndex(e => e.EmailId)
-                    .HasName("UQ__Tbl_Memb__7ED91ACEF8ED1434")
+                    .HasName("UQ_Members_EmailId")
                     .IsUnique();
 
                 entity.HasIndex(e => e.LastName)
-                    .HasName("UQ__Tbl_Memb__7449F3991CF28E81")
+                    .HasName("UQ_Members_LastName")
                     .IsUnique();
 
                 entity.Property(e => e.CreatedOn).HasColumnType("datetime");
@@ -121,15 +100,10 @@ namespace DotNet_WebAPI_Angular_Data.Models
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<TblProduct>(entity =>
+            modelBuilder.Entity<Product>(entity =>
             {
-                entity.HasKey(e => e.ProductId)
-                    .HasName("PK__Tbl_Prod__B40CC6CD1825A255");
-
-                entity.ToTable("Tbl_Product");
-
                 entity.HasIndex(e => e.ProductName)
-                    .HasName("UQ__Tbl_Prod__DD5A978A5803BACB")
+                    .HasName("UQ_Product_ProductName")
                     .IsUnique();
 
                 entity.Property(e => e.CreatedDate).HasColumnType("datetime");
@@ -145,20 +119,18 @@ namespace DotNet_WebAPI_Angular_Data.Models
                     .IsUnicode(false);
 
                 entity.HasOne(d => d.Category)
-                    .WithMany(p => p.TblProduct)
+                    .WithMany(p => p.Product)
                     .HasForeignKey(d => d.CategoryId)
-                    .HasConstraintName("FK__Tbl_Produ__Categ__398D8EEE");
+                    .HasConstraintName("FK_Category_CategoryId");
             });
 
-            modelBuilder.Entity<TblRoles>(entity =>
+            modelBuilder.Entity<Roles>(entity =>
             {
                 entity.HasKey(e => e.RoleId)
-                    .HasName("PK__Tbl_Role__8AFACE1A7ED90F50");
-
-                entity.ToTable("Tbl_Roles");
+                    .HasName("PK_Roles_RoleId");
 
                 entity.HasIndex(e => e.RoleName)
-                    .HasName("UQ__Tbl_Role__8A2B616013064B8E")
+                    .HasName("UQ_Roles_RoleName")
                     .IsUnique();
 
                 entity.Property(e => e.RoleName)
@@ -166,12 +138,10 @@ namespace DotNet_WebAPI_Angular_Data.Models
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<TblShippingDetails>(entity =>
+            modelBuilder.Entity<ShippingDetails>(entity =>
             {
                 entity.HasKey(e => e.ShippingDetailId)
-                    .HasName("PK__Tbl_Ship__FBB36851C936B996");
-
-                entity.ToTable("Tbl_ShippingDetails");
+                    .HasName("PK_ShippingDetails_ShippingDetailId");
 
                 entity.Property(e => e.Adress)
                     .HasMaxLength(500)
@@ -200,19 +170,19 @@ namespace DotNet_WebAPI_Angular_Data.Models
                     .IsUnicode(false);
 
                 entity.HasOne(d => d.Member)
-                    .WithMany(p => p.TblShippingDetails)
+                    .WithMany(p => p.ShippingDetails)
                     .HasForeignKey(d => d.MemberId)
-                    .HasConstraintName("FK__Tbl_Shipp__Membe__3A81B327");
+                    .HasConstraintName("FK_Members_MemberId");
             });
 
-            modelBuilder.Entity<TblSlideImage>(entity =>
+            modelBuilder.Entity<SlideImage>(entity =>
             {
                 entity.HasKey(e => e.SlideId)
-                    .HasName("PK__Tbl_Slid__9E7CB650CE00DFD9");
+                    .HasName("PK_SlideImage_SlideId");
 
-                entity.ToTable("Tbl_SlideImage");
-
-                entity.Property(e => e.SlideImage).IsUnicode(false);
+                entity.Property(e => e.SlideImage1)
+                    .HasColumnName("SlideImage")
+                    .IsUnicode(false);
 
                 entity.Property(e => e.SlideTitle)
                     .HasMaxLength(500)

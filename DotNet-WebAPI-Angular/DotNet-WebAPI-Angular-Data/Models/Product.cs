@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace DotNet_WebAPI_Angular_Data.Models
 {
-    public partial class TblProduct
+    public partial class Product
     {
-        public TblProduct()
+        public Product()
         {
-            TblCart = new HashSet<TblCart>();
+            Cart = new HashSet<Cart>();
         }
 
         public int ProductId { get; set; }
@@ -22,7 +22,7 @@ namespace DotNet_WebAPI_Angular_Data.Models
         public bool? IsFeatured { get; set; }
         public int? Quantity { get; set; }
 
-        public virtual TblCategory Category { get; set; }
-        public virtual ICollection<TblCart> TblCart { get; set; }
+        public virtual Category Category { get; set; }
+        public virtual ICollection<Cart> Cart { get; set; }
     }
 }

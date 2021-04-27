@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DotNet_WebAPI_Angular_Data.Models
 {
-    public partial class TblShippingDetails
+    public partial class ShippingDetails
     {
         public int ShippingDetailId { get; set; }
         public int? MemberId { get; set; }
@@ -16,6 +16,6 @@ namespace DotNet_WebAPI_Angular_Data.Models
         public decimal? AmountPaid { get; set; }
         public string PaymentType { get; set; }
 
-        public virtual TblMembers Member { get; set; }
+        public virtual Members Member { get; set; }
     }
 }

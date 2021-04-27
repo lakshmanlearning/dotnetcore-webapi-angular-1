@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DotNet_WebAPI_Angular_InterfaceContracts.Generic
 {
-    public interface IUnitOfWork : IDisposable
+    public interface IUnitOfWork //: IDisposable
     {
         MyOnlineShoppingContext Context { get; }
 

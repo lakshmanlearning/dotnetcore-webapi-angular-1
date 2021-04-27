@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace DotNet_WebAPI_Angular_Data.Models
 {
-    public partial class TblCategory
+    public partial class Category
     {
-        public TblCategory()
+        public Category()
         {
-            TblProduct = new HashSet<TblProduct>();
+            Product = new HashSet<Product>();
         }
 
         public int CategoryId { get; set; }
@@ -15,6 +15,6 @@ namespace DotNet_WebAPI_Angular_Data.Models
         public bool? IsActive { get; set; }
         public bool? IsDelete { get; set; }
 
-        public virtual ICollection<TblProduct> TblProduct { get; set; }
+        public virtual ICollection<Product> Product { get; set; }
     }
 }

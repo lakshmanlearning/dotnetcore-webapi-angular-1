@@ -14,7 +14,7 @@ namespace DotNet_WebAPI_Angular.AppBuilderExtensions
     {
         public static IServiceCollection ConfigureDataContext(this IServiceCollection services, IConfiguration configuration, ILogger logger)
         {
-            services.AddDbContextPool<MyOnlineShoppingContext>(options => 
+            services.AddDbContextPool<MyOnlineShoppingContext>(options =>
             {
                 options.UseSqlServer(GetConnectionString(configuration));
             });

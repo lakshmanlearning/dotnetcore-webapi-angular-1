@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace DotNet_WebAPI_Angular_Data.Models
 {
-    public partial class TblMembers
+    public partial class Members
     {
-        public TblMembers()
+        public Members()
         {
-            TblShippingDetails = new HashSet<TblShippingDetails>();
+            ShippingDetails = new HashSet<ShippingDetails>();
         }
 
         public int MemberId { get; set; }
@@ -20,6 +20,6 @@ namespace DotNet_WebAPI_Angular_Data.Models
         public DateTime? CreatedOn { get; set; }
         public DateTime? ModifiedOn { get; set; }
 
-        public virtual ICollection<TblShippingDetails> TblShippingDetails { get; set; }
+        public virtual ICollection<ShippingDetails> ShippingDetails { get; set; }
     }
 }

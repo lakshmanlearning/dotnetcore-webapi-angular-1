@@ -21,7 +21,8 @@ namespace DotNet_WebAPI_Angular_APIServices.Generic
         public virtual async Task<IQueryable<T>> GetAll()
         {
             IQueryable<T> query = null;
-            await Task.Run(() => {
+            await Task.Run(() =>
+            {
                 query = _unitOfWork.Context.Set<T>();
             });
             return query;
@@ -62,7 +63,7 @@ namespace DotNet_WebAPI_Angular_APIServices.Generic
             _unitOfWork.Context.Set<T>().UpdateRange(entities);
             await _unitOfWork.CommitAsync();
         }
-        
+
         public async virtual Task Delete(T entity)
         {
             _unitOfWork.Context.Set<T>().Remove(entity);
@@ -111,9 +112,9 @@ namespace DotNet_WebAPI_Angular_APIServices.Generic
         private bool disposed = false;
         protected virtual void Dispose(bool disposing)
         {
-            if(!this.disposed)
+            if (!this.disposed)
             {
-                if(disposing)
+                if (disposing)
                 {
                     _unitOfWork.Context.Dispose();
                 }
