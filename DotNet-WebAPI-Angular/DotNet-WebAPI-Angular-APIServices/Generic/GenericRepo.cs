@@ -27,9 +27,14 @@ namespace DotNet_WebAPI_Angular_APIServices.Generic
             return query;
         }
 
-        public async Task<List<T>> Find(Expression<Func<T, bool>> predicate)
+        public async Task<List<T>> FindAsync(Expression<Func<T, bool>> predicate)
         {
             return await _unitOfWork.Context.Set<T>().Where(predicate).ToListAsync();
+        }
+
+        public List<T> Find(Func<T, bool> predicate)
+        {
+            return _unitOfWork.Context.Set<T>().Where(predicate).ToList();
         }
 
         public async Task<T> Add(T entity)

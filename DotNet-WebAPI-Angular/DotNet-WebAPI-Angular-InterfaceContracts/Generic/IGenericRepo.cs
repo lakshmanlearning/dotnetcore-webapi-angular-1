@@ -12,7 +12,8 @@ namespace DotNet_WebAPI_Angular_InterfaceContracts.Generic
     public interface IGenericRepo<T> : IDisposable where T : class
     {
         Task<IQueryable<T>> GetAll();
-        Task<List<T>> Find(Expression<Func<T, bool>> predicate);
+        Task<List<T>> FindAsync(Expression<Func<T, bool>> predicate);
+        List<T> Find(Func<T, bool> predicate);
         Task<T> Add(T entity);
         Task AddRange(IEnumerable<T> entities);
         Task Delete(T entity);
