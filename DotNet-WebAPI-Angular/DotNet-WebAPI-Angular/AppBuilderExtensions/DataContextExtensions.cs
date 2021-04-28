@@ -12,7 +12,7 @@ namespace DotNet_WebAPI_Angular.AppBuilderExtensions
 {
     public static class DataContextExtensions
     {
-        public static IServiceCollection ConfigureDataContext(this IServiceCollection services, IConfiguration configuration, ILogger logger)
+        public static IServiceCollection ConfigureDataContext(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContextPool<MyOnlineShoppingContext>(options =>
             {
