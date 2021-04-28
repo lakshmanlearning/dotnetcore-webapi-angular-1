@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DotNet_WebAPI_Angular_APIServices.Generic
+namespace DotNet_WebAPI_Angular_Repo.Generic
 {
     public class GenericRepo<T> : IGenericRepo<T> where T : class
     {

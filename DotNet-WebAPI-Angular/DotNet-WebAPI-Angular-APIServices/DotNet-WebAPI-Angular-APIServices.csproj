@@ -7,7 +7,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DotNet-WebAPI-Angular-InterfaceContracts\DotNet-WebAPI-Angular-InterfaceContracts.csproj" />
-    <ProjectReference Include="..\DotNet-WebAPI-Angular-RepoInterface\DotNet-WebAPI-Angular-RepoInterface.csproj" />
   </ItemGroup>
 
 </Project>

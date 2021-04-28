@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DotNet_WebAPI_Angular_APIServices.Generic
+namespace DotNet_WebAPI_Angular_Repo.Generic
 {
     public class UnitOfWork : IUnitOfWork
     {

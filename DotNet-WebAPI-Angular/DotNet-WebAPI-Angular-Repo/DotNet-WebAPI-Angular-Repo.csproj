@@ -5,4 +5,9 @@
     <RootNamespace>DotNet_WebAPI_Angular_Repo</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DotNet-WebAPI-Angular-Data\DotNet-WebAPI-Angular-Data.csproj" />
+    <ProjectReference Include="..\DotNet-WebAPI-Angular-InterfaceContracts\DotNet-WebAPI-Angular-InterfaceContracts.csproj" />
+  </ItemGroup>
+
 </Project>

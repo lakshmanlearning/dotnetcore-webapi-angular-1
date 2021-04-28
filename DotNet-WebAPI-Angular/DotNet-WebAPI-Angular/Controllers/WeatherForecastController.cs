@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DotNet_WebAPI_Angular_DTO;
+using DotNet_WebAPI_Angular_InterfaceContracts.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -17,10 +19,12 @@ namespace DotNet_WebAPI_Angular.Controllers
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
+        private readonly IMemberService _memberService;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IMemberService memberService)
         {
             _logger = logger;
+            _memberService = memberService;
         }
 
         [HttpGet]
@@ -34,6 +38,13 @@ namespace DotNet_WebAPI_Angular.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        [HttpGet]
+        [Route("GetAllMembers")]
+        public async Task<IActionResult> GetAllMembers()
+        {
+            return Ok(await _memberService.GetAllMembers());
         }
     }
 }

@@ -1,3 +1,4 @@
+using DotNet_WebAPI_Angular.AppBuilderExtensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
@@ -20,6 +21,7 @@ namespace DotNet_WebAPI_Angular
         public void ConfigureServices(IServiceCollection services)
         {
             var cons = Configuration.GetSection("ConnectionStrings").GetSection("MyConnectionString");
+            services.ConfigureDependencies();
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
