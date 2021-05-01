@@ -1,4 +1,6 @@
+using AutoMapper;
 using DotNet_WebAPI_Angular.AppBuilderExtensions;
+using DotNet_WebAPI_Angular_APIServices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
@@ -21,6 +23,7 @@ namespace DotNet_WebAPI_Angular
         public void ConfigureServices(IServiceCollection services)
         {
             var config = Configuration.GetSection("ConnectionStrings");
+            services.AddAutoMapper(typeof(MemberService).Assembly);
             services.ConfigureDependencies();
             services.ConfigureDataContext(config);
             services.AddControllersWithViews();

@@ -109,6 +109,12 @@ namespace DotNet_WebAPI_Angular_Repo.Generic
             _unitOfWork.Context.Database.ExecuteSqlCommand(sql, parameters);
         }
 
+        public T ReloadEntity(T entity)
+        {
+            _unitOfWork.Context.Entry<T>(entity).Reload();
+            return entity;
+        }
+
         private bool disposed = false;
         protected virtual void Dispose(bool disposing)
         {

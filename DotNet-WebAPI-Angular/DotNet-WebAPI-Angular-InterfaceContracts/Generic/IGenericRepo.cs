@@ -26,7 +26,7 @@ namespace DotNet_WebAPI_Angular_InterfaceContracts.Generic
         Task<T> GetByIdAsync(decimal id);
         T GetById(int id);
         void SQLQuery(string sql, params object[] parameters);
-        //T ReoladEntity(T entity);
+        T ReloadEntity(T entity);
         //DataSet GetDataSet(string commandText, params SqlParameter[] parameters);
 
     }
