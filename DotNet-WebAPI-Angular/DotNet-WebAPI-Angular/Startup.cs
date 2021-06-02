@@ -1,5 +1,6 @@
 using AutoMapper;
 using DotNet_WebAPI_Angular.AppBuilderExtensions;
+using DotNet_WebAPI_Angular.Models;
 using DotNet_WebAPI_Angular_APIServices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -7,6 +8,7 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.IO;
 
 namespace DotNet_WebAPI_Angular
 {
@@ -22,11 +24,14 @@ namespace DotNet_WebAPI_Angular
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var config = Configuration.GetSection("ConnectionStrings");
+            var config = Configuration.GetSection("MySettings");
             services.AddAutoMapper(typeof(MemberService).Assembly);
-            services.ConfigureDependencies();
-            services.ConfigureDataContext(config);
+            //services.ConfigureDependencies();
+            //services.ConfigureDataContext(config);
             services.AddControllersWithViews();
+
+            services.Configure<AppSettingsOptions>(Configuration.GetSection("MySettings"));
+
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
@@ -37,22 +42,35 @@ namespace DotNet_WebAPI_Angular
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Error");
-            }
+            //if (env.IsDevelopment())
+            //{
+            //    app.UseDeveloperExceptionPage();
+            //}
+            //else
+            //{
+            //    app.UseExceptionHandler("/Error");
+            //}
+            app.UseDeveloperExceptionPage();
 
+            app.Use(async (context, next) => 
+            {
+                await next();
+                if(context.Response.StatusCode == 404 && !Path.HasExtension(context.Request.Path.Value))
+                {
+                    context.Request.Path = "/index.html";
+                    await next();
+                }
+            });
+            app.UseHttpsRedirection();
+            app.UseDefaultFiles();
             app.UseStaticFiles();
-            if (!env.IsDevelopment())
+            if (!env.IsDevelopment() && !env.IsEnvironment("QA") && !env.IsEnvironment("Production"))
             {
                 app.UseSpaStaticFiles();
             }
 
             app.UseRouting();
+            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
             app.UseEndpoints(endpoints =>
             {
@@ -68,7 +86,7 @@ namespace DotNet_WebAPI_Angular
 
                 spa.Options.SourcePath = "ClientApp";
 
-                if (env.IsDevelopment())
+                if (env.IsDevelopment() || env.IsEnvironment("QA") || env.IsEnvironment("Production"))
                 {
                     spa.UseAngularCliServer(npmScript: "start");
                 }

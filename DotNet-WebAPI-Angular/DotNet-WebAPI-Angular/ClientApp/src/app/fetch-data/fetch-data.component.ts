@@ -14,7 +14,7 @@ export class FetchDataComponent {
       this.forecasts = result;
     }, error => console.error(error));
 
-    this.membersService.GetAllMembers().subscribe(result => console.log(result));
+    //this.membersService.GetAllMembers().subscribe(result => console.log(result));
 
   }
 }

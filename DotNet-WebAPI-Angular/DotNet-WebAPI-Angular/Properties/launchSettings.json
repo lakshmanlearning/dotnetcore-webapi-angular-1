@@ -23,20 +23,20 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
+    "DotNet_WebAPI_Angular_QA": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "applicationUrl": "http://localhost:55445",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "QA"
+      }
+    },
     "DotNet_WebAPI_Angular_Production": {
       "commandName": "Project",
       "launchBrowser": true,
       "applicationUrl": "http://localhost:55449",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Production"
-      }
-    },
-    "DotNet_WebAPI_Angular_Prod": {
-      "commandName": "Project",
-      "launchBrowser": true,
-      "applicationUrl": "http://localhost:55445",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Prod"
       }
     }
   }
