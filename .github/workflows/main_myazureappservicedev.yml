@@ -34,7 +34,9 @@ jobs:
 
     - name: npm install, build, and test
       run: |
-        npm --prefix /a/dotnetcore-webapi-angular-1\dotnetcore-webapi-angular-1\dotnet-webapi-angular\clientapp install
+        npm install
+        npm run build --prod
+      working-directory: .
         
     - name: dotnet publish
       run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
