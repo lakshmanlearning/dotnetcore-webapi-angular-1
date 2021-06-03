@@ -29,9 +29,11 @@ jobs:
       with:
         node-version: '12.x'
 
+    - name: moving to solution directory
+      run: cd DotNet-WebAPI-Angular/ClientApp
+
     - name: npm install, build, and test
       run: |
-	cd DotNet-WebAPI-Angular/ClientApp
         npm install
         
     - name: dotnet publish
