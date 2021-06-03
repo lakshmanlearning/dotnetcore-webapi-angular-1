@@ -35,7 +35,6 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm install
-        npm run build --prod
       working-directory: .
         
     - name: dotnet publish
