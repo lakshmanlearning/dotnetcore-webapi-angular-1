@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNet-WebAPI-Angular-APISe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNet-WebAPI-Angular-Repo", "DotNet-WebAPI-Angular-Repo\DotNet-WebAPI-Angular-Repo.csproj", "{56D08611-D913-4D79-9C21-522AF0F222BF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNet-WebAPI-Angular-DTO", "DotNet-WebAPI-Angular-DTO\DotNet-WebAPI-Angular-DTO.csproj", "{B52C27F0-8E6B-4C96-B99B-CF5CF89ECC2C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet-WebAPI-Angular-DTO", "DotNet-WebAPI-Angular-DTO\DotNet-WebAPI-Angular-DTO.csproj", "{B52C27F0-8E6B-4C96-B99B-CF5CF89ECC2C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

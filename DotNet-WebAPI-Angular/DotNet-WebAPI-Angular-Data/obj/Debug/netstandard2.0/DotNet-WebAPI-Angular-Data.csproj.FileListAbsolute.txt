@@ -1,8 +1,0 @@
-D:\Learning\DotNetCore\DotnetCoreWebApiAngular\DotNet-WebAPI-Angular\DotNet-WebAPI-Angular-Data\bin\Debug\netstandard2.0\DotNet-WebAPI-Angular-Data.deps.json
-D:\Learning\DotNetCore\DotnetCoreWebApiAngular\DotNet-WebAPI-Angular\DotNet-WebAPI-Angular-Data\bin\Debug\netstandard2.0\DotNet-WebAPI-Angular-Data.dll
-D:\Learning\DotNetCore\DotnetCoreWebApiAngular\DotNet-WebAPI-Angular\DotNet-WebAPI-Angular-Data\bin\Debug\netstandard2.0\DotNet-WebAPI-Angular-Data.pdb
-D:\Learning\DotNetCore\DotnetCoreWebApiAngular\DotNet-WebAPI-Angular\DotNet-WebAPI-Angular-Data\obj\Debug\netstandard2.0\DotNet-WebAPI-Angular-Data.AssemblyInfoInputs.cache
-D:\Learning\DotNetCore\DotnetCoreWebApiAngular\DotNet-WebAPI-Angular\DotNet-WebAPI-Angular-Data\obj\Debug\netstandard2.0\DotNet-WebAPI-Angular-Data.AssemblyInfo.cs
-D:\Learning\DotNetCore\DotnetCoreWebApiAngular\DotNet-WebAPI-Angular\DotNet-WebAPI-Angular-Data\obj\Debug\netstandard2.0\DotNet-WebAPI-Angular-Data.csproj.CoreCompileInputs.cache
-D:\Learning\DotNetCore\DotnetCoreWebApiAngular\DotNet-WebAPI-Angular\DotNet-WebAPI-Angular-Data\obj\Debug\netstandard2.0\DotNet-WebAPI-Angular-Data.dll
-D:\Learning\DotNetCore\DotnetCoreWebApiAngular\DotNet-WebAPI-Angular\DotNet-WebAPI-Angular-Data\obj\Debug\netstandard2.0\DotNet-WebAPI-Angular-Data.pdb

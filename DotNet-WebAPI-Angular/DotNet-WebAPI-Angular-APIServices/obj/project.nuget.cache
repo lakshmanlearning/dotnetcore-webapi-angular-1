@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "bfk4Wirf9YlMB6RzedDtaQfe0SMBBilgkg9i/cpPREz4F07IxsJT6auLEuSdEY+Tx8UD8B9kK5kF8fHxS9Fdww==",
+  "dgSpecHash": "U2ereehyKwd4xgRmm07b3/oVp2+UO5XFEgE21a+eAfxr/L8Qe125yIvBZfbOHqDXvVIDQ+g0jvAWwiFDHB8QgQ==",
   "success": true,
   "projectFilePath": "D:\\Learning\\DotNetCore\\DotnetCoreWebApiAngular\\DotNet-WebAPI-Angular\\DotNet-WebAPI-Angular-APIServices\\DotNet-WebAPI-Angular-APIServices.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\laxman\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
+    "C:\\Users\\laxman\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\laxman\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\laxman\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\laxman\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

@@ -1704,6 +1704,16 @@
         "runtime": {
           "bin/placeholder/DotNet-WebAPI-Angular-Data.dll": {}
         }
+      },
+      "DotNet-WebAPI-Angular-DTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/DotNet-WebAPI-Angular-DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DotNet-WebAPI-Angular-DTO.dll": {}
+        }
       }
     }
   },
@@ -6181,10 +6191,16 @@
       "type": "project",
       "path": "../DotNet-WebAPI-Angular-Data/DotNet-WebAPI-Angular-Data.csproj",
       "msbuildProject": "../DotNet-WebAPI-Angular-Data/DotNet-WebAPI-Angular-Data.csproj"
+    },
+    "DotNet-WebAPI-Angular-DTO/1.0.0": {
+      "type": "project",
+      "path": "../DotNet-WebAPI-Angular-DTO/DotNet-WebAPI-Angular-DTO.csproj",
+      "msbuildProject": "../DotNet-WebAPI-Angular-DTO/DotNet-WebAPI-Angular-DTO.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "DotNet-WebAPI-Angular-DTO >= 1.0.0",
       "DotNet-WebAPI-Angular-Data >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
     ]
@@ -6223,6 +6239,9 @@
           "projectReferences": {
             "D:\\Learning\\DotNetCore\\DotnetCoreWebApiAngular\\DotNet-WebAPI-Angular\\DotNet-WebAPI-Angular-Data\\DotNet-WebAPI-Angular-Data.csproj": {
               "projectPath": "D:\\Learning\\DotNetCore\\DotnetCoreWebApiAngular\\DotNet-WebAPI-Angular\\DotNet-WebAPI-Angular-Data\\DotNet-WebAPI-Angular-Data.csproj"
+            },
+            "D:\\Learning\\DotNetCore\\DotnetCoreWebApiAngular\\DotNet-WebAPI-Angular\\DotNet-WebAPI-Angular-DTO\\DotNet-WebAPI-Angular-DTO.csproj": {
+              "projectPath": "D:\\Learning\\DotNetCore\\DotnetCoreWebApiAngular\\DotNet-WebAPI-Angular\\DotNet-WebAPI-Angular-DTO\\DotNet-WebAPI-Angular-DTO.csproj"
             }
           }
         }
