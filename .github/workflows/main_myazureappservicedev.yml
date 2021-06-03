@@ -31,7 +31,7 @@ jobs:
 
     - name: npm install, build, and test
       run: |
-        npm install
+	npm --prefix ClientApp install
 
     - name: dotnet publish
       run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
