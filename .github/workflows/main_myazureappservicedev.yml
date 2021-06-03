@@ -34,7 +34,7 @@ jobs:
 
     - name: npm install, build, and test
       run: |
-        npm --prefix ClientApp install
+        npm --prefix DotNet-WebAPI-Angular/ClientApp install
         
     - name: dotnet publish
       run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
