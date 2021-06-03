@@ -30,11 +30,11 @@ jobs:
         node-version: '12.x'
 
     - name: moving to solution directory
-      run: cd DotNet-WebAPI-Angular/ClientApp
+      run: cd /a/dotnetcore-webapi-angular-1\dotnetcore-webapi-angular-1\dotnet-webapi-angular\clientapp
 
     - name: npm install, build, and test
       run: |
-        npm --prefix /dotnetcore-webapi-angular-1\dotnetcore-webapi-angular-1\dotnet-webapi-angular\clientapp install
+        npm --prefix /a/dotnetcore-webapi-angular-1\dotnetcore-webapi-angular-1\dotnet-webapi-angular\clientapp install
         
     - name: dotnet publish
       run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
