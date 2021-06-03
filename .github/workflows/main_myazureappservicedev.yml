@@ -31,7 +31,7 @@ jobs:
 
     - name: npm install, build, and test
       run: |
-	    cd DotNet-WebAPI-Angular/ClientApp
+	cd DotNet-WebAPI-Angular/ClientApp
         npm install
         
     - name: dotnet publish
